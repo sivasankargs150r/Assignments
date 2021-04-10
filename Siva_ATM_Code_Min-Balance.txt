@@ -1,0 +1,125 @@
+import time
+print("Insert your Card")
+
+# For Card Processing
+time.sleep(5)
+password = 1234
+
+### taking Input Pin from the User
+pin = int(input("Enter Your 4 digit Pin"))
+
+### User Account Balance
+balance = 10000
+min_balance = 2000
+### Checking whether User has used Correct pin or Not
+if pin == password:
+    while True:
+        print("""
+        1 == Balance
+        2 == Withdraw Balance
+        3 == Deposit
+        4 == Exit
+        """)
+        try:
+            ### Take a option from the User
+            option = int(input("Please Enter your Choice"))
+        except:
+            print("Enter valid Option")
+        # for Options
+        if option == 1:
+            print("Your Current Balance is - ",balance)
+        elif option == 2:
+            withdraw_amt = int(input("Please Enter your Withdrawl Amt "))
+            if balance>min_balance:
+                if withdraw_amt<balance:
+                    balance = balance - withdraw_amt
+                    print("Your {} amount is debited from your account ".format(withdraw_amt))
+                    print("Your Updated balance is Rs - ", balance)
+            else:
+                print("Insufficient Funds in Account")
+        elif option == 3:
+
+            deposit_amt = int(input("Please Enter your Deposit Amt"))
+            balance = deposit_amt + balance
+            print(f"Your Updated balance is {balance}")
+        elif option == 4:
+            break
+else:
+    print("Please Re- Enter your Pin Again")
+
+####Output
+
+Insert your Card
+Enter Your 4 digit Pin1234
+
+        1 == Balance
+        2 == Withdraw Balance
+        3 == Deposit
+        4 == Exit
+        
+Please Enter your Choice2
+Please Enter your Withdrawl Amt 2000
+Your 2000 amount is debited from your account 
+Your Updated balance is Rs -  8000
+
+        1 == Balance
+        2 == Withdraw Balance
+        3 == Deposit
+        4 == Exit
+        
+Please Enter your Choice2
+Please Enter your Withdrawl Amt 3000
+Your 3000 amount is debited from your account 
+Your Updated balance is Rs -  5000
+
+        1 == Balance
+        2 == Withdraw Balance
+        3 == Deposit
+        4 == Exit
+        
+Please Enter your Choice1000
+
+        1 == Balance
+        2 == Withdraw Balance
+        3 == Deposit
+        4 == Exit
+        
+Please Enter your Choice2
+Please Enter your Withdrawl Amt 1000
+Your 1000 amount is debited from your account 
+Your Updated balance is Rs -  4000
+
+        1 == Balance
+        2 == Withdraw Balance
+        3 == Deposit
+        4 == Exit
+        
+Please Enter your Choice2
+Please Enter your Withdrawl Amt 2000
+Your 2000 amount is debited from your account 
+Your Updated balance is Rs -  2000
+
+        1 == Balance
+        2 == Withdraw Balance
+        3 == Deposit
+        4 == Exit
+        
+Please Enter your Choice2
+Please Enter your Withdrawl Amt 2000
+Insufficient Funds in Account
+
+        1 == Balance
+        2 == Withdraw Balance
+        3 == Deposit
+        4 == Exit
+        
+Please Enter your Choice2
+Please Enter your Withdrawl Amt 500
+Insufficient Funds in Account
+
+        1 == Balance
+        2 == Withdraw Balance
+        3 == Deposit
+        4 == Exit
+        
+Please Enter your Choice
